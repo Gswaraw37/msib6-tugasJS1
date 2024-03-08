@@ -1,0 +1,33 @@
+.study {
+    margin: auto;
+    border:1px solid;
+    justify-content: center;
+    padding: 0;
+    border-spacing: 0;
+    width: 100%;
+}
+
+.table {
+    padding-top: 15px;
+}
+
+.judultable {
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.headtable {
+    background-color: cyan;
+    padding: 5px;
+}
+
+.bodytable {
+    background-color: snow;
+    padding: 3px;
+    text-align: center;
+}
+
+.foottable {
+    background-color: salmon;
+    padding: 5px;
+}

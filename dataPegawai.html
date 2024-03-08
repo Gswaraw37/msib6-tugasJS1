@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas JS - Data Pegawai</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="table">
+    <h1 class="judultable">Data Pegawai</h1>
+    <table class="study" border="1">
+        <thead>
+            <tr>
+                <th class="headtable">Nama Pegawai</th>
+                <th class="headtable">Jabatan</th>
+                <th class="headtable">Status</th>
+                <th class="headtable">Gaji Pokok</th>
+                <th class="headtable">Tunjangan Jabatan</th>
+                <th class="headtable">BPJS</th>
+                <th class="headtable">Tunjangan Keluarga</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td id="nama" class="bodytable"></td>
+                <td id="jabatan" class="bodytable"></td>
+                <td id="status" class="bodytable"></td>
+                <td id="gapok" class="bodytable"></td>
+                <td id="tunjab" class="bodytable"></td>
+                <td id="bpjs" class="bodytable"></td>
+                <td id="tunjkel" class="bodytable"></td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <th colspan="3" class="foottable">Total Gaji</th>
+                <th colspan="4" id="totalGaji" class="foottable"></th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
+<script>
+    let nama = document.getElementById("nama");
+    nama.innerHTML = "Ridwan";
+    let jabatan = document.getElementById("jabatan");
+    jabatan.innerHTML = "Manager";
+    let status = document.getElementById("status");
+    status.innerHTML = "Menikah";
+
+    //Manager=>15 jt, Asisten Manager=>10 jt, Staff=>5 jt
+    if(jabatan.innerHTML == 'Manager'){
+        gapok = 15000000;
+    }else if(jabatan.innerHTML == 'Asisten Manager'){
+        gapok = 10000000;
+    }else if(jabatan.innerHTML == 'Staff'){
+        gapok = 5000000;
+    }else{
+        gapok = 0;
+    }
+
+    let tunjab = 0.15 * gapok;
+    let bpjs = 0.1 * gapok;
+    let tunjkel = (status.innerHTML == 'Menikah') ? 0.2 * gapok : 0;
+    let totalGaji = gapok + tunjab + bpjs + tunjkel;
+
+    document.getElementById("gapok").innerHTML = gapok.toLocaleString('id-ID');
+    document.getElementById("tunjab").innerHTML = tunjab.toLocaleString('id-ID');
+    document.getElementById("bpjs").innerHTML = bpjs.toLocaleString('id-ID');
+    document.getElementById("tunjkel").innerHTML = tunjkel.toLocaleString('id-ID');
+    document.getElementById("totalGaji").innerHTML = totalGaji.toLocaleString('id-ID');
+</script>
